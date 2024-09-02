@@ -17,3 +17,9 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - name: create a txt file in github runner.
+        run: |
+          touch file.txt
+          echo "This runner OS is ${{ runner.os }} and workspace name is ${{ github.workspace }}" >>file.txt
+          cat file.txt
+       
