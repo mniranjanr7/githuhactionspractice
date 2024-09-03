@@ -1,6 +1,15 @@
 # File: .github/workflows/workflow.yml
 
-on: [push]
+on: 
+  workflow_dispatch:
+    inputs:
+      loglevel: 
+        description: 'Log level'
+        required: true
+        default: Warning
+      tags:
+        description: "Test Scenario tags"
+    
 
 name: Run Azure Login With a Service Principal Secret
 
