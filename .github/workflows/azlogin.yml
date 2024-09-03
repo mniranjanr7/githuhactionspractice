@@ -21,3 +21,4 @@ jobs:
         azcliversion: latest
         inlineScript: |
           az account show
+          az resource list
