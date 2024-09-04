@@ -30,4 +30,4 @@ jobs:
           az resource list
 
     - name: print the runtime parameter
-      run: echo "${{group name}}"
+      run: echo "$group name"
