@@ -3,13 +3,10 @@
 on: 
   workflow_dispatch:
     inputs:
-      loglevel: 
-        description: 'Log level'
+      group name: 
+        description: 'group name'
         required: true
-        default: Warning
-      tags:
-        description: "Test Scenario tags"
-    
+        default: Warning    
 
 name: Run Azure Login With a Service Principal Secret
 
@@ -31,3 +28,6 @@ jobs:
         inlineScript: |
           az account show
           az resource list
+
+    - name: print the runtime parameter
+      run: echo "${{group name}}"
