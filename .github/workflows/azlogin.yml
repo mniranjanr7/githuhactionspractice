@@ -21,13 +21,12 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
         allow-no-subscriptions: true
 
-    # - name: Azure CLI script
-    #   uses: azure/cli@v2
-    #   with:
-    #     azcliversion: latest
-    #     inlineScript: |
-    #       az account show
-    #       az resource list
+    - name: Azure CLI script
+      uses: azure/cli@v2
+      with:
+        azcliversion: latest
+        inlineScript: |
+          az ad group create --display-name ${{ github.event.inputs.group_name }} --mail-nickname ${{ github.event.inputs.group_name }}
 
     - name: print the runtime parameter
       run: echo "The input is ${{ github.event.inputs.group_name }}"
