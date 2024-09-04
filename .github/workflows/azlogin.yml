@@ -3,7 +3,7 @@
 on: 
   workflow_dispatch:
     inputs:
-      group name: 
+      group_name: 
         description: 'group name'
         required: true
         default: Warning    
@@ -30,4 +30,4 @@ jobs:
           az resource list
 
     - name: print the runtime parameter
-      run: echo "$group name"
+      run: echo "The input is {{github.event.input.group_name}}"
