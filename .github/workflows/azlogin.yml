@@ -35,5 +35,5 @@ jobs:
     - name: run shell scripts
       run: |
             echo "${{GITHUB.WORKSPACE}}"
-            bash printdate.sh
+            {{github.workspace}}/scripts/printdate.sh
       
