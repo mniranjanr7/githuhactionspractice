@@ -35,7 +35,7 @@ jobs:
     - name: run shell scripts
       run: |
             echo "${{GITHUB.WORKSPACE}}"
-            chmod 755 scripts/*.sh
-            scripts/printdate.sh
+            # chmod 755 scripts/*.sh
+            sh scripts/printdate.sh
             # bash scripts/
       
