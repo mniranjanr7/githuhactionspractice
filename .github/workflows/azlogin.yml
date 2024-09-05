@@ -35,5 +35,6 @@ jobs:
     - name: run shell scripts
       run: |
             echo "${{GITHUB.WORKSPACE}}"
-            bash scripts/printdate.sh
+            ls {{GITHUB.WORKSPACE}}/scripts/
+            # bash scripts/printdate.sh
       
