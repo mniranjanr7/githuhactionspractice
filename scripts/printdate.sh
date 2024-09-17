@@ -3,3 +3,4 @@ echo "Today date will be printed"
 current_date=`date`
 echo $current_date
 echo `uptime`
+sh scripts/printtime.sh
