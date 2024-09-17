@@ -6,3 +6,4 @@ echo `uptime`
 echo "Running the printtime script"
 sh scripts/printtime.sh
 cat scripts/printtime.sh
+echo "completed the printtime script"
