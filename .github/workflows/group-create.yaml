@@ -30,3 +30,27 @@ jobs:
               
               # Connect to Microsoft Graph Using the Tenant ID and Client Secret Credential
                 Connect-MgGraph -TenantId $TenantId -ClientSecretCredential $ClientSecretCredential
+
+              #Define AU ID
+              # $adminUnitObj ="8074d0b0-a508-4a91-93c3-80c52cab9f5b"
+
+              # Path to the CSV file
+                $csvPath = "{{github.workspace}}group_list.csv"
+ 
+              # Import the CSV file
+                $groups = Import-Csv -Path $csvPath
+ 
+              # Loop through each row in the CSV and create a security group
+
+                foreach ($group in $groups) {
+                $GroupNameString = [string]$group.group
+                write-host "Group Name = "$GroupNameString
+                
+                # $CreateGroup = New-MgGroup -DisplayName $GroupNameString -MailEnabled:$False  -MailNickName $GroupNameString -SecurityEnabled
+                # $result = Get-MgGroup -Filter "displayName eq '$GroupNameString'" -Property Id, DisplayName
+                # write-host "Group Name = "$result.DisplayName
+                # write-host "Group ID = "$result.Id
+                # $StringGroupID = [string]$result.Id
+                # $odataId = "https://graph.microsoft.com/v1.0/groups/$StringGroupID"
+                # New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj -OdataId $odataId
+                }
