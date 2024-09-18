@@ -35,7 +35,7 @@ jobs:
               # $adminUnitObj ="8074d0b0-a508-4a91-93c3-80c52cab9f5b"
 
               # Path to the CSV file
-                $csvPath = "{{github.workspace}}/scripts/group_list.csv"
+                $csvPath = "${{github.workspace}}/scripts/group_list.csv"
  
               # Import the CSV file
                 $groups = Import-Csv -Path $csvPath
