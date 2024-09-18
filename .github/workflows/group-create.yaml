@@ -7,7 +7,7 @@ jobs:
 
     steps: 
       - uses: actions/checkout@v4
-      - name: login to azure using 
+      - name: login to azure using SP sp-kynsight-automation and create the g
         shell: pwsh
         run: |
               echo "Define the Application (Client) ID and Secret"
@@ -29,3 +29,4 @@ jobs:
                 echo $ClientSecretCredential
               
               # Connect to Microsoft Graph Using the Tenant ID and Client Secret Credential
+                Connect-MgGraph -TenantId $TenantId -ClientSecretCredential $ClientSecretCredential
