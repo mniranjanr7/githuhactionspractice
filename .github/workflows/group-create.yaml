@@ -46,10 +46,10 @@ jobs:
                 $GroupNameString = [string]$group.group
                 write-host "Group Name = "$GroupNameString
                 
-                # $CreateGroup = New-MgGroup -DisplayName $GroupNameString -MailEnabled:$False  -MailNickName $GroupNameString -SecurityEnabled
-                # $result = Get-MgGroup -Filter "displayName eq '$GroupNameString'" -Property Id, DisplayName
-                # write-host "Group Name = "$result.DisplayName
-                # write-host "Group ID = "$result.Id
+                $CreateGroup = New-MgGroup -DisplayName $GroupNameString -MailEnabled:$False  -MailNickName $GroupNameString -SecurityEnabled
+                $result = Get-MgGroup -Filter "displayName eq '$GroupNameString'" -Property Id, DisplayName
+                write-host "Group Name = "$result.DisplayName
+                write-host "Group ID = "$result.Id
                 # $StringGroupID = [string]$result.Id
                 # $odataId = "https://graph.microsoft.com/v1.0/groups/$StringGroupID"
                 # New-MgDirectoryAdministrativeUnitMemberByRef -AdministrativeUnitId $adminUnitObj -OdataId $odataId
