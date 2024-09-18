@@ -12,27 +12,20 @@ jobs:
         run: |
               echo "Define the Application (Client) ID and Secret"
               # Application (Client) ID
-              $ApplicationClientId = "b391290d-f79e-4d01-9045-2af456f8e56f" 
+                $ApplicationClientId = "b391290d-f79e-4d01-9045-2af456f8e56f" 
               
               # Application Secret Value
-               $ApplicationClientSecret = "8_78Q~Awk4Qc_lJCCtaUgdnZrzzffXhfUNqLpc6y" 
+                $ApplicationClientSecret = "8_78Q~Awk4Qc_lJCCtaUgdnZrzzffXhfUNqLpc6y" 
               
               # Tenant ID
-               $TenantId = "066fe1a7-14e1-4d6c-9f26-61b3da1d6f45" 
+                $TenantId = "066fe1a7-14e1-4d6c-9f26-61b3da1d6f45" 
               
               # Convert the Client Secret to a Secure String
-              $SecureClientSecret = ConvertTo-SecureString -String $ApplicationClientSecret -AsPlainText -Force
-              echo $SecureClientSecret
+                $SecureClientSecret = ConvertTo-SecureString -String $ApplicationClientSecret -AsPlainText -Force
+                echo $SecureClientSecret
  
               # Create a PSCredential Object Using the Client ID and Secure Client Secret
-              $ClientSecretCredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $ApplicationClientId, $SecureClientSecret
-              echo $ClientSecretCredential
+                $ClientSecretCredential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $ApplicationClientId, $SecureClientSecret
+                echo $ClientSecretCredential
               
               # Connect to Microsoft Graph Using the Tenant ID and Client Secret Credential
-
-
-    
-  
-
-
-  
